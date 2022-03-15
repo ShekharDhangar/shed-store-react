@@ -1,9 +1,10 @@
-import "./App.css";
+import './App.css';
+import {RoutesPath} from './Routes'
 
 function App() {
   return (
     <div className="App">
-      <h1>REACT</h1>
+      < RoutesPath />
     </div>
   );
 }
