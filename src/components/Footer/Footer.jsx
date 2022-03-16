@@ -6,10 +6,10 @@ function Footer() {
       <ul className="list-none footer-ul p-1">
         <li className="list-head bold">SHOP BY</li>
         {footerData
-          .filter((links) => links.key === "shop")
-          .map((links) => (
-            <li key={links.id} className="footer-link">
-              {links.title}
+          .filter(({key}) =>key === "shop")
+          .map(({id,title}) => (
+            <li key={id} className="footer-link">
+              {title}
             </li>
           ))}
       </ul>
@@ -17,10 +17,10 @@ function Footer() {
       <ul className="list-none footer-ul p-1">
         <li className="list-head bold">SHED</li>
         {footerData
-          .filter((links) => links.key === "shed")
-          .map((links) => (
-            <li key={links.id} className="footer-link">
-              {links.title}
+          .filter(({key}) => key === "shed")
+          .map(({id,title}) => (
+            <li key={id} className="footer-link">
+              {title}
             </li>
           ))}
       </ul>
@@ -28,10 +28,10 @@ function Footer() {
       <ul className="list-none footer-ul p-1">
         <li className="list-head bold">ABOUT US</li>
         {footerData
-          .filter((links) => links.key === "companyRelated")
-          .map((links) => (
-            <li key={links.id} className="footer-link">
-              {links.title}
+          .filter(({key}) => key === "companyRelated")
+          .map(({id,title}) => (
+            <li key={id} className="footer-link">
+              {title}
             </li>
           ))}
       </ul>

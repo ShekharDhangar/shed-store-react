@@ -21,14 +21,14 @@ const navItems = [
     },
 ]
 
-const navIcons = [
+const navIconsData = [
     {
         id: 1,
-        profileClass:'profile-box',
+        profileClass: 'profile-box',
         title: 'Profile',
         txtClassName: "icon-txt",
         icon: <FaUserAlt className='user-icon icon' />,
-        logBtn:"Log out",
+        logBtn: "Log out",
     },
     {
         id: 2,
@@ -68,4 +68,4 @@ const aboutUsMenu = [
         id: 2,
     },
 ]
-export { navItems, navIcons, contactUsMenu, aboutUsMenu }
+export { navItems, navIconsData, contactUsMenu, aboutUsMenu }
