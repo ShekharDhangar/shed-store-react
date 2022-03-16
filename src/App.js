@@ -14,7 +14,7 @@ function App() {
   }
   useEffect(() => {
     loadProductsData();
-  });
+  },[]);
 
   return (
     <div className="App">
