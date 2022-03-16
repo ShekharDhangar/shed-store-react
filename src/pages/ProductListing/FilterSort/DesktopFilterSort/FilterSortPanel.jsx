@@ -51,6 +51,7 @@ function FilterSortPanel({ filtersData, sortsData }) {
               <input
                 type="radio"
                 className="radio-inp"
+                checked={productStates.sortBy && productStates.sortBy === `${sortItem}`}
                 name="sort"
                 onChange={() => dispatch({ type: "SORT", payload: sortItem })}
               />

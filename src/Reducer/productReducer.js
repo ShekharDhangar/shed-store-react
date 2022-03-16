@@ -34,7 +34,9 @@ function productReducer(state, { type, payload }) {
       return { ...state, price: payload };
     }
     case "CLEAR FILTER": {
-      return state = contextInitialState;
+      return {...state,sortBy: "",
+      filterBy: { brands: [], color: [] },
+      price: 0,}
     }
 
     default:
