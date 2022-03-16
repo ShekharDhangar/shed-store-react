@@ -23,10 +23,8 @@ function getFilteredData(state, filterObj) {
 
 function getPriceData(products, priceState) {
     if (priceState === 0) {
-        console.log('0')
         return products;
     }
-    console.log('1')
     return products.filter((product) => product.productPrice <= priceState);
 }
 export { getSortedData, getFilteredData, getPriceData };
