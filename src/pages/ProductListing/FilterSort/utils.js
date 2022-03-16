@@ -1,9 +1,6 @@
 function isChecked(property, listItem, productStates) {
     return productStates.filterBy[property].includes(listItem);
 }
-function isSortChecked(){
-    return false;
-}
 const getDynamicPriceRange = (productData) => {
     return productData.reduce(
         (priceRange, productCard) => {
