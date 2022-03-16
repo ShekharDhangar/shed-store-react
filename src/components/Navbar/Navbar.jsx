@@ -60,6 +60,7 @@ const Navbar = ({ menuRequired, navTxt, logoRemove, prevPage }) => {
                 <BiSearch className="search-btn" />
               </div>
             </div>
+
             {navIconsData.map((navIcon) => {
               return (
                 <div

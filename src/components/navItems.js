@@ -68,4 +68,5 @@ const aboutUsMenu = [
         id: 2,
     },
 ]
+
 export { navItems, navIconsData, contactUsMenu, aboutUsMenu }
