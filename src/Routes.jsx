@@ -1,5 +1,5 @@
 import { Routes, Route,} from "react-router-dom";
-import MockAPI from "./Mock-api";
+import MockAPI from "./mock-api";
 import { HomePage, MobFilterPanel, ProductListing,  } from "./pages/pages";
 
 function RoutesPath(){
