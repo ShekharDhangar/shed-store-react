@@ -4,7 +4,6 @@ import { AiFillStar, FaArrowRight, FaHeart } from "../../icons/icons";
 import { Loading } from "../components";
 import { Link } from "react-router-dom";
 
-
 import "./ProductCard.css";
 function ProductCard({ productCardDetails, btnTxt }) {
   const { Cart, addToCart } = useCartContext();
@@ -12,13 +11,14 @@ function ProductCard({ productCardDetails, btnTxt }) {
   const { Wishlist, addToWishlist, removeFromWishlist } = useWishlistContext();
   const [wishlistLoader, showWishlistLoader] = useState(false);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
-
+  
   const ratingsArray = [];
   for (let i = 1; i <= productCardDetails.starRating; i++) {
     ratingsArray.push({
       icon: <AiFillStar key={i} className="size-xs icon" />,
     });
   }
+
 
   function isPresentInState(data, state) {
     return state.some((card) => card._id === data._id);
