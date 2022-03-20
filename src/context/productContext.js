@@ -5,8 +5,6 @@ const contextInitialState = {
     sortBy: "",
     filterBy: { brands: [], color: [] },
     rating: 0,
-    wishlist: [],
-    cart: [],
     productsList: [],
     userID: "",
 }
