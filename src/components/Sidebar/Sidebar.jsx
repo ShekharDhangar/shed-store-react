@@ -1,6 +1,5 @@
 import "./Sidebar.css";
-import {Link} from 'react-router-dom';
-import { MdClose } from "../../icons/icons";
+import { Link } from "react-router-dom";
 import { aboutUsMenu, contactUsMenu, navItems } from "../navItems";
 function Sidebar() {
   return (
@@ -41,4 +40,4 @@ function Sidebar() {
     </aside>
   );
 }
-export default Sidebar;
+export { Sidebar };
