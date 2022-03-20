@@ -1,4 +1,7 @@
 function getSortedData(productData, state) {
+    if (state === "") {
+        return productData;
+    }
     return [...productData].sort((a, b) =>
         state === "low to high"
             ? a.productPrice - b.productPrice
@@ -21,10 +24,10 @@ function getFilteredData(state, filterObj) {
     }, state.productsList);
 }
 
-function getPriceData(products, priceState) {
-    if (priceState === 0) {
-        return products;
+function getRatingsData(products, ratingState) {
+    if (ratingState === 0) {
+        return products
     }
-    return products.filter((product) => product.productPrice <= priceState);
+    return products.filter((product) => product.starRating <= ratingState);
 }
-export { getSortedData, getFilteredData, getPriceData };
+export { getSortedData, getFilteredData, getRatingsData };

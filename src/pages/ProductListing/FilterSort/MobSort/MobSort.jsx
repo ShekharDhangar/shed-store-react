@@ -1,9 +1,9 @@
 import { sortsData } from "../filterSortData";
 import { IoChevronBack } from "../../../../icons/icons";
 import "./MobSort.css";
-import { useReducerContext } from "../../../../context/context";
+import { useProductContext } from "../../../../context/productContext";
 function MobSort({ setShowMobSort }) {
-  const { dispatch } = useReducerContext();
+  const { dispatch } = useProductContext();
   return (
     <div className="w-100 h-100  sort-overlay">
       <div className=" w-100 mob-sort-container">

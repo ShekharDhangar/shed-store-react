@@ -1,13 +1,24 @@
-import { navItems, navIconsData } from "../navItems";
+import { navItems } from "../navItems";
 import "./Navbar.css";
 import "./Navbar-Media.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {Sidebar} from "../components";
+import { Sidebar } from "../components";
 import { logoImg } from "../../assets/images.js";
-import { BiSearch, IoChevronBack } from "../../icons/icons";
+import {
+  FaShoppingCart,
+  BiSearch,
+  FaHeart,
+  FaUserAlt,
+  IoChevronBack,
+} from "../../icons/icons";
+import { useCartContext, useWishlistContext } from "../../context/context";
 
-const Navbar = ({ menuRequired, navTxt, logoRemove, prevPage }) => {
+const Navbar = ({ menuRequired, navTxt, logoRemove }) => {
+  const [DropDown, setDropDown] = useState(false);
+  const { Cart } = useCartContext();
+  const navigate = useNavigate();
+  const { Wishlist } = useWishlistContext();
   const [sideBar, setSideBar] = useState(false);
   const showSidebar = () => setSideBar((sideBar) => !sideBar);
   return (
@@ -22,9 +33,10 @@ const Navbar = ({ menuRequired, navTxt, logoRemove, prevPage }) => {
         )}
         {navTxt && (
           <div className="nav-icon-grp lt-bold">
-            <Link className="flex" to={prevPage}>
-              <IoChevronBack className="back-arrow icon size-xs" />
-            </Link>
+            <IoChevronBack
+              onClick={() => navigate(-1)}
+              className="back-arrow icon size-xs"
+            />
             <span className="nav-txt">{navTxt}</span>
           </div>
         )}
@@ -61,22 +73,45 @@ const Navbar = ({ menuRequired, navTxt, logoRemove, prevPage }) => {
               </div>
             </div>
 
-            {navIconsData.map((navIcon) => {
-              return (
-                <div
-                  key={navIcon.id}
-                  className="flex pointer relative icon-container"
-                >
-                  {navIcon.icon}
-                  <span className={navIcon.txtClassName}>{navIcon.title}</span>
-                  {navIcon.logBtn && (
-                    <button className="absolute btn log-out-btn">
-                      Log out
-                    </button>
-                  )}
+            <div
+              onClick={() => setDropDown((prev) => !prev)}
+              className="flex pointer relative icon-container"
+            >
+              <FaUserAlt className="user-icon icon" />
+              <span className="icon-txt">Profile</span>
+              {DropDown && (
+                <div className="absoloute inset-0 profile-box">
+                  <button
+                    onClick={() => navigate("/login")}
+                    className="w-100 btn btn-xs"
+                  >
+                    Login/SignUp
+                  </button>
                 </div>
-              );
-            })}
+              )}
+            </div>
+
+            <div
+              onClick={() => navigate("/wishlist")}
+              className="flex pointer relative icon-container"
+            >
+              <FaHeart className="wishlist-icon icon " />
+              {Wishlist.length > 0 && (
+                <span className="flex number-badge">{Wishlist.length}</span>
+              )}
+              <span className="icon-txt">Wishlist</span>
+            </div>
+
+            <div
+              onClick={() => navigate("/cart")}
+              className="flex pointer relative icon-container"
+            >
+              <FaShoppingCart className="cart-icon icon " />
+              {Cart.length > 0 && (
+                <span className="flex number-badge">{Cart.length}</span>
+              )}
+              <span className="icon-txt">Cart</span>
+            </div>
           </div>
         </nav>
       </section>

@@ -8,7 +8,6 @@ function ProductListing() {
       <Navbar
         menuRequired={false}
         navTxt={"Mens Style"}
-        prevPage={"/"}
         logoRemove={"logo-remove"}
       />
       <main>

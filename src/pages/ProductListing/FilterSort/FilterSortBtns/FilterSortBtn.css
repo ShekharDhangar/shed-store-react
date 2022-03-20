@@ -1,4 +1,4 @@
-.mob-filter-sort-wrapper {
+.filter-sort-btns {
   position: fixed;
   bottom: -1.25rem;
   height: 5rem;
@@ -12,7 +12,7 @@
 }
 
 @media only screen and (max-width: 50em) {
-  .mob-filter-sort-wrapper {
+  .filter-sort-btns {
     display: block;
   }
 }

@@ -1,28 +1,27 @@
-import { FaHeart } from "../../../icons/icons";
 import { ProductCard } from "../../../components/components";
 import "./ProductGrid.css";
 import "./ProductGridMedia.css";
 import {
   getFilteredData,
-  getPriceData,
+  getRatingsData,
   getSortedData,
 } from "../filterOperation";
 import { filtersData } from "../FilterSort/filterSortData";
-import { useReducerContext } from "../../../context/context";
+import { useProductContext } from "../../../context/productContext";
 function ProductGrid() {
-  const { productStates } = useReducerContext();
+  const { productStates } = useProductContext();
   const filteredProductsData = getFilteredData(productStates, filtersData);
-  const pricedData = getPriceData(filteredProductsData, productStates.price);
-  const sortedProducts = getSortedData(pricedData, productStates.sortBy);
-
+  const ratingsData = getRatingsData(filteredProductsData, productStates.rating);
+  const sortedProducts = getSortedData(ratingsData, productStates.sortBy);
+  const loadings = "loading";
   return (
     <section className="product-list-container">
+      {productStates.loader && loadings}
       {sortedProducts.map((card) => (
         <ProductCard
-          key={card.id}
+          key={card._id}
           productCardDetails={card}
           btnTxt={"Add to Cart"}
-          productCardIcon={<FaHeart className="size-xs icon " />}
         />
       ))}
     </section>

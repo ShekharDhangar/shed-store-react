@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import {filtersData} from '../filterSortData';
 import { useState } from "react";
 import { isChecked } from "../utils";
-import { useReducerContext } from "../../../../context/context";
+import { useProductContext } from "../../../../context/productContext";
 
 
 function MobFilterPanel() {
-  const { productStates, dispatch } = useReducerContext();
+  const { productStates, dispatch } = useProductContext();
   const filterProperties = Object.keys(filtersData);
   const [selectedfilterProperty, setSelectedFilterProperty] = useState("brands");
   return (

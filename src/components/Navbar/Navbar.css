@@ -5,8 +5,24 @@
 .logo-container {
   gap: 1rem;
 }
-.nav-icon-grp{
+.nav-icon-grp {
   display: none;
+}
+.nav-icon-container .icon-container .icon {
+  width: 5rem;
+  height: 2.65rem;
+}
+.number-badge {
+  position: absolute;
+  top: 1.5px;
+  right: 2px;
+  background-color: var(--primary-clr);
+  font-weight: bolder;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  color: var(--clr-white);
+  font-size: 1.5rem;
 }
 
 .search-icon-container {
@@ -46,8 +62,10 @@
 .icon-container .icon:hover {
   color: var(--primary-clr);
 }
-
-.log-out-btn{
+.badge {
+  font-size: 5px;
+}
+.log-out-btn {
   display: none;
   padding: 5px 1rem;
   font-size: 1.5rem;
@@ -58,10 +76,23 @@
   color: var(--clr-black);
   border: 2px solid var(--clr-black);
 }
-.log-out-btn:hover{
+.log-out-btn:hover {
   background-color: var(--clr-white);
   color: var(--clr-black);
 }
-.icon-container:hover .log-out-btn{
+.icon-container:hover .log-out-btn {
   display: block;
+}
+.profile-box {
+  position: absolute;
+  top: 6.5rem;
+  max-width: 15rem;
+}
+.profile-box .btn {
+  margin: 2px 0;
+  cursor: pointer;
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  border: 1px solid var(--clr-black);
+  font-size: 1.75rem;
 }
