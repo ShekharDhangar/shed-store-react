@@ -10,4 +10,3 @@ import { Wishlist } from "./Wishlist/Wishlist"
 import { AuthLogin } from "./AuthenticationPage/AuthenticationComp/AuthLogin/AuthLogin";
 import { AuthSignUp } from "./AuthenticationPage/AuthenticationComp/AuthSignUp/AuthSignUp";
 export { HomePage,AuthLogin,AuthSignUp, MobSort, MobFilterPanel, Cart, ProductGrid, FilterSortBtn, ProductListing, FilterSortPanel , Wishlist}
-

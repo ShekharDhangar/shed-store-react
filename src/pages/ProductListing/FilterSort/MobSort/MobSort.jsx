@@ -2,6 +2,7 @@ import { sortsData } from "../filterSortData";
 import { IoChevronBack } from "../../../../icons/icons";
 import "./MobSort.css";
 import { useProductContext } from "../../../../context/productContext";
+
 function MobSort({ setShowMobSort }) {
   const { dispatch } = useProductContext();
   return (

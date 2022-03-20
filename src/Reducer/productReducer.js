@@ -1,4 +1,3 @@
-
 function productReducer(state, { type, payload }) {
   switch (type) {
     case "USERSIGNED": {

@@ -6,7 +6,6 @@ import { useState } from "react";
 import { isChecked } from "../utils";
 import { useProductContext } from "../../../../context/productContext";
 
-
 function MobFilterPanel() {
   const { productStates, dispatch } = useProductContext();
   const filterProperties = Object.keys(filtersData);
