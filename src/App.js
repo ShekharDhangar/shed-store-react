@@ -1,26 +1,29 @@
 import { useEffect } from "react";
-import { useProductContext } from './context/context';
-import { RoutesPath } from './Routes'
-import { getProductsData } from './serverCalls/getProductsData';
+import { useProductContext } from "./context/context";
+import { RoutesPath } from "./Routes";
+import { getProductsData } from "./serverCalls/getProductsData";
 function App() {
   const { dispatch } = useProductContext();
-  async function loadProductsData() {
-    dispatch({ type: "LOADER", payload: true });
-    const InitialProductsData = await getProductsData();
-    if (InitialProductsData) {
-      dispatch({ type: "INITIAL PRODUCTS", payload: InitialProductsData })
-      dispatch({ type: "LOADER", payload: false });
-    }
-    const encodedToken = localStorage.getItem("token");
-    dispatch({ type: "USERSIGNED", payload: encodedToken })
-  }
   useEffect(() => {
-    loadProductsData();
+    (async () => {
+      try {
+        dispatch({ type: "LOADER", payload: true });
+        const encodedToken = localStorage.getItem("token");
+        dispatch({ type: "USERSIGNED", payload: encodedToken });
+        const InitialProductsData = await getProductsData();
+        if (InitialProductsData) {
+          dispatch({ type: "INITIAL PRODUCTS", payload: InitialProductsData });
+          dispatch({ type: "LOADER", payload: false });
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    })();
   }, []);
 
   return (
     <div className="App">
-      < RoutesPath />
+      <RoutesPath />
     </div>
   );
 }
