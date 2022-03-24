@@ -1,13 +1,37 @@
 import "./Sidebar.css";
-import { Link } from "react-router-dom";
 import { aboutUsMenu, contactUsMenu, navItems } from "../navItems";
+import { useAuthContext } from "../../context/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
+
 function Sidebar() {
+  const { userState, logOutUser } = useAuthContext();
+  const navigate = useNavigate();
+
   return (
     <aside className="side-overlay">
       <section className="sidebar">
         <div className="sidebar-header">
           <span className="welcome-header txt-sm bold">Welcome</span>
-          <div className="txt-grey register lt-bold">Login / SignUp</div>
+          {userState.id ? (
+            <Link to="/login">
+              <div
+                onClick={() => {
+                  logOutUser();
+                  navigate("/");
+                }}
+                className=" register lt-bold"
+              >
+                LogOut
+              </div>
+            </Link>
+          ) : (
+            <div
+              onClick={() => navigate("/login")}
+              className=" register lt-bold"
+            >
+              Login / SignUp
+            </div>
+          )}
         </div>
         <div className="divider">"</div>
         <div className="menu-content">

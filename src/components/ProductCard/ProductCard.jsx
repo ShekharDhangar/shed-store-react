@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { useCartContext, useWishlistContext ,useAlertContext} from "../../context/context";
+import { useCartContext, useWishlistContext ,useAuthContext} from "../../context/context";
 import { AiFillStar, FaArrowRight, FaHeart } from "../../icons/icons";
 import { Loading } from "../components";
 import { Link } from "react-router-dom";
 
 import "./ProductCard.css";
-import { useAuthContext } from "../../context/AuthContext";
 import { isPresentInState } from "../utils";
 function ProductCard({ productCardDetails, btnTxt }) {
   const { Cart, addToCart } = useCartContext();
-  const {Alert} = useAlertContext();
   const { userState } = useAuthContext();
   const { Wishlist, addToWishlist, removeFromWishlist } = useWishlistContext();
   const [wishlistLoader, showWishlistLoader] = useState(false);
@@ -61,14 +59,15 @@ function ProductCard({ productCardDetails, btnTxt }) {
               )}
             </button>
           ):<button className="flex icon-badge"> <FaHeart className="icon size-xs" /></button>}
-
+          <Link to={`/${productCardDetails._id}`} >
           <div className="w-100 relative product-img-container">
             <img
               className={`w-100 h-100 absolute inset ${productCardDetails.lazyLoading}`}
               src={productCardDetails.imgUrl}
               alt={productCardDetails.alt}
-            />
+              />
           </div>
+              </Link>
         </div>
         <div className="w-100 product-content">
           <span className="product-title lt-bold">

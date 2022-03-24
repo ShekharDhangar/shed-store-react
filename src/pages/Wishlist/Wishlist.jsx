@@ -21,18 +21,13 @@ function Wishlist() {
             productCardIcon={"TRASH"}
           />
         ))}
-        {Wishlist.length == 0 && (
-          <div>
-            <h1>YOUR WISHLIST IS EMPTY</h1>
-            <p className="txt-sm">
-              Add items that you like to your wishlist. Review them anytime and
-              easily move them to the bag
-            </p>
-
+        {Wishlist.length === 0 && (
+          <div className="flex empty-page-box" >
+            <h1 className="empty-page-title" >YOUR WISHLIST IS EMPTY !</h1>
+            <img className="flex empty-page-image" src="https://images.bewakoof.com/web/group-3x-1509961969.png" alt="empty wishlist" />
             <Link to="/shop">
-              <button className="btn btn-sm">View Products</button>
+            <button className="btn btn-sm outline ">View Products</button>
             </Link>
-
           </div>
         )}
       </section>

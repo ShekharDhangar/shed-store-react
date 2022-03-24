@@ -89,6 +89,8 @@ function AuthProvider({ children }) {
   function logOutUser() {
     localStorage.clear();
     setUserState([]);
+    setCart([]);
+    setWishlist([]);
   }
 
   useEffect(() => {

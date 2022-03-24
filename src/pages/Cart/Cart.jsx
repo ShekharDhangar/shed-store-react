@@ -1,5 +1,6 @@
 import { CartProductCard, Navbar } from "../../components/components";
 import "./Cart.css";
+import {Link} from "react-router-dom";
 import { useCartContext } from "../../context/context";
 
 function Cart() {
@@ -77,13 +78,17 @@ function Cart() {
             </div>
           </div>
         )}
-        {Cart.length === 0 && (
-          <div>
-            <h1>Hey,it feels so light!</h1>
-            <p className="txt-sm">There is nothing in your bag</p>
-          </div>
-        )}
       </section>
+        {Cart.length === 0 && (
+           <div className="flex empty-page-box" >
+           <h1 className="empty-page-title" >YOUR CART IS EMPTY !</h1>
+           <img className="flex empty-page-image" src="https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png" alt="empty cart" />
+           <Link to="/shop">
+           <button className="btn btn-sm outline ">View Products</button>
+           </Link>
+
+         </div>
+        )}
     </>
   );
 }
