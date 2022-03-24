@@ -1,22 +1,29 @@
 import { useEffect } from "react";
-import { useReducerContext } from './context/context';
-import { RoutesPath } from './Routes'
-import { getProductsData } from './serverCalls/getProductsData';
+import { useProductContext } from "./context/context";
+import { RoutesPath } from "./Routes";
+import { getProductsData } from "./serverCalls/getProductsData";
 function App() {
-  const { dispatch } = useReducerContext();
-  async function loadProductsData() {
-    const InitialProductsData = await getProductsData();
-    if (InitialProductsData) {
-      dispatch({ type: "INITIAL PRODUCTS", payload: InitialProductsData })
-    }
-  }
+  const { dispatch } = useProductContext();
   useEffect(() => {
-    loadProductsData();
-  },[]);
+    (async () => {
+      try {
+        dispatch({ type: "LOADER", payload: true });
+        const encodedToken = localStorage.getItem("token");
+        dispatch({ type: "USERSIGNED", payload: encodedToken });
+        const InitialProductsData = await getProductsData();
+        if (InitialProductsData) {
+          dispatch({ type: "INITIAL PRODUCTS", payload: InitialProductsData });
+          dispatch({ type: "LOADER", payload: false });
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    })();
+  }, []);
 
   return (
     <div className="App">
-      < RoutesPath />
+      <RoutesPath />
     </div>
   );
 }

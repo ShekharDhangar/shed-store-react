@@ -23,24 +23,27 @@ const navItems = [
 
 const navIconsData = [
     {
-        id: 1,
+        id: "user-icon",
         profileClass: 'profile-box',
         title: 'Profile',
+        url:'/login',
         txtClassName: "icon-txt",
-        icon: <FaUserAlt className='user-icon icon' />,
+        icon: <FaUserAlt className='user-icon icon ' />,
         logBtn: "Log out",
     },
     {
-        id: 2,
+        id: "wishlist-icon",
         title: 'Wishlist',
+        url:'/wishlist',
         txtClassName: "icon-txt",
-        icon: <FaHeart className='wishlist-icon icon' />,
+        icon: <FaHeart className='wishlist-icon icon ' />,
     },
     {
-        id: 3,
+        id: "cart-icon",
         title: 'Cart',
+        url:'/cart',
         txtClassName: "icon-txt",
-        icon: <FaShoppingCart className='cart-icon icon' />,
+        icon: <FaShoppingCart className='cart-icon icon ' />,
     }
 ]
 

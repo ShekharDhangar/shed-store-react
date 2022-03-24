@@ -1,7 +1,8 @@
-import { contextInitialState } from "../context/context";
-
 function productReducer(state, { type, payload }) {
   switch (type) {
+    case "USERSIGNED": {
+      return { ...state, userID: payload }
+    }
     case "INITIAL PRODUCTS": {
       return {
         ...state,
@@ -30,13 +31,15 @@ function productReducer(state, { type, payload }) {
         }
       };
     }
-    case "PRICE": {
-      return { ...state, price: payload };
+    case "RATING": {
+      return { ...state, rating: payload };
     }
     case "CLEAR FILTER": {
-      return {...state,sortBy: "",
-      filterBy: { brands: [], color: [] },
-      price: 0,}
+      return {
+        ...state, sortBy: "",
+        filterBy: { brands: [], color: [] },
+        rating: 5,
+      }
     }
 
     default:

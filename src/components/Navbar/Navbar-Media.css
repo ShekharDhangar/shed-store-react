@@ -3,8 +3,7 @@
     font-size: 3.25rem;
   }
 }
-@media only screen and (max-width:931px){
-}
+
 @media only screen and (max-width: 50em) {
   .search-container {
     width: 0;
@@ -20,10 +19,10 @@
   .nav-link-container {
     display: none;
   }
-  .logo-remove{
+  .logo-remove {
     display: none;
   }
- 
+
   .nav-txt {
     font-size: 1.5em;
   }
@@ -37,10 +36,9 @@
     width: 27em;
     padding-left: 5px;
     align-items: center;
-     display: flex; 
+    display: flex;
     gap: 5px;
   }
-
 }
 @media only screen and (max-width: 48em) {
   .menu-list > li {
@@ -49,8 +47,8 @@
 }
 @media only screen and (max-width: 38.125em) {
   .nav-icon-container .icon-container .icon {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   .user-icon,
   .nav-icon-container .icon-container .icon-txt {
@@ -66,14 +64,9 @@
     margin-right: -2rem;
   }
 
-  .nav-icon-container .icon-container {
-    flex-direction: column;
-    height: 100%;
-    margin-inline: 1.25rem;
-  }
-
-  .nav-icon-container .icon-container {
-    margin-inline: 8.5px;
+  .number-badge {
+    top: 1rem;
+    right: -1rem;
   }
 }
 
@@ -84,8 +77,6 @@
     height: 2em;
   }
   .nav-icon-container .icon-container {
-    margin: 5px;
+    margin: 7px;
   }
 }
-
-

@@ -1,21 +1,5 @@
-import { createContext, useContext, useReducer } from "react";
-import { productReducer } from "../Reducer/productReducer";
-const ReducerContext = createContext();
-const contextInitialState = {
-    sortBy: "",
-    filterBy: { brands: [], color: [] },
-    price: 0,
-    productsList: [],
-}
-
-function ReducerContextProvider({ children }) {
-    const [productStates, dispatch] = useReducer(productReducer, contextInitialState)
-    return (
-        <ReducerContext.Provider value={{ productStates, dispatch }}>
-            {children}
-        </ReducerContext.Provider>
-    )
-}
-const useReducerContext = () => useContext(ReducerContext);
-
-export { useReducerContext, ReducerContextProvider, contextInitialState };
+import { CartProvider,useCartContext } from "./cartContext";
+import { WishlistProvider ,useWishlistContext} from "./wishlistContext";
+import { ProductProvider,useProductContext } from "./productContext";
+import { ToastProvider,useToastContext } from "./toastContext";
+export{CartProvider,useCartContext,WishlistProvider,useToastContext,ToastProvider,useWishlistContext,ProductProvider,useProductContext}

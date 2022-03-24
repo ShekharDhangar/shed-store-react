@@ -1,10 +1,9 @@
-import { useReducerContext } from "../../../../context/context";
+import { useProductContext } from "../../../../context/productContext";
 import { isChecked, getDynamicPriceRange } from "../utils";
 import "./FilterSortPanel.css";
 
 function FilterSortPanel({ filtersData, sortsData }) {
-  const { productStates, dispatch } = useReducerContext();
-  const minMax = getDynamicPriceRange(productStates.productsList);
+  const { productStates, dispatch } = useProductContext();
   return (
     <section className=" side-filter-container sticky">
       <div className="side-filter">
@@ -64,11 +63,15 @@ function FilterSortPanel({ filtersData, sortsData }) {
         <div className="flex filter-item slider-container">
           <input
             type="range"
-            min={minMax[0]}
-            max={minMax[1]}
-            defaultValue={minMax[1]}
+            min={1}
+            max={5}
+            defaultValue={5}
+            // defaultValue={5}
+            // min={minMax[0]}
+            // max={minMax[1]}
+            // defaultValue={minMax[1]}
             onChange={(e) =>
-              dispatch({ type: "PRICE", payload: e.target.value })
+              dispatch({ type: "RATING", payload: e.target.value })
             }
           />
         </div>

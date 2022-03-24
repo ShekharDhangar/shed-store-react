@@ -1,6 +1,17 @@
-import { AiFillStar } from "../../icons/icons";
+import { useState } from "react";
+import { useCartContext, useWishlistContext ,useToastContext} from "../../context/context";
+import { AiFillStar, FaArrowRight, FaHeart } from "../../icons/icons";
+import { Loading } from "../components";
+import { Link } from "react-router-dom";
+
 import "./ProductCard.css";
-function ProductCard({ productCardDetails, btnTxt, productCardIcon }) {
+function ProductCard({ productCardDetails, btnTxt }) {
+  const { Cart, addToCart } = useCartContext();
+  const {Toast} = useToastContext();
+  const { Wishlist, addToWishlist, removeFromWishlist } = useWishlistContext();
+  const [wishlistLoader, showWishlistLoader] = useState(false);
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
+  
   const ratingsArray = [];
   for (let i = 1; i <= productCardDetails.starRating; i++) {
     ratingsArray.push({
@@ -8,11 +19,49 @@ function ProductCard({ productCardDetails, btnTxt, productCardIcon }) {
     });
   }
 
+
+  function isPresentInState(data, state) {
+    return state.some((card) => card._id === data._id);
+  }
+
+  function callAddToCart(productCardDetails, state) {
+    addToCart(productCardDetails, state);
+  }
+
   return (
-    <div className="product-card-container" key={productCardDetails.id}>
+    <div className="product-card-container" key={productCardDetails._id}>
       <div className="flex w-100 relative product-card">
         <div className="w-100 h-100 relative product-header">
-          <div className="flex icon-badge">{productCardIcon}</div>
+          {isPresentInState(productCardDetails, Wishlist) ? (
+            <button
+              disabled={wishlistLoader}
+              onClick={() =>
+                removeFromWishlist(productCardDetails._id, showWishlistLoader)
+              }
+              className="flex icon-badge"
+            >
+              {wishlistLoader ? (
+                <Loading width="20px" height="20px" />
+              ) : (
+                <FaHeart className="icon size-xs primary-clr" />
+              )}
+            </button>
+          ) : (
+            <button
+              disabled={wishlistLoader}
+              onClick={() =>
+                addToWishlist(productCardDetails, showWishlistLoader)
+              }
+              className="flex icon-badge"
+            >
+              {wishlistLoader ? (
+                <Loading width="20px" height="20px" />
+              ) : (
+                <FaHeart className="icon size-xs " />
+              )}
+            </button>
+          )}
+
           <div className="w-100 relative product-img-container">
             <img
               className={`w-100 h-100 absolute inset ${productCardDetails.lazyLoading}`}
@@ -39,7 +88,23 @@ function ProductCard({ productCardDetails, btnTxt, productCardIcon }) {
           </div>
         </div>
         <div className="w-100 product-footer btn-container">
-          <button className="w-100 btn btn-xs cart-btn">{btnTxt}</button>
+          {isPresentInState(productCardDetails, Cart) ? (
+            <Link to="/cart">
+              <button className="w-100 btn btn-xs cart-btn">
+                Go to Cart <FaArrowRight className="icon size-xs" />
+              </button>
+            </Link>
+          ) : (
+            <button
+              disabled={isAddingToCart}
+              className="w-100 btn btn-xs cart-btn"
+              onClick={() =>
+                callAddToCart(productCardDetails, setIsAddingToCart)
+              }
+            >
+              {isAddingToCart ? <Loading width="20px" height="20px" /> : btnTxt}
+            </button>
+          )}
         </div>
       </div>
     </div>
