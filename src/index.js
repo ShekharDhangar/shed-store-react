@@ -12,6 +12,7 @@ import {
 } from "./context/context";
 import { AuthProvider } from "./context/AuthContext";
 makeServer();
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
