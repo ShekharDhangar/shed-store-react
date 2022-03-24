@@ -1,9 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import axios from "axios"
+import { useLocalStorageGetItem } from "../customHooks/customHooks";
 
 const CartContext = createContext();
 function CartProvider({ children }) {
-    const userToken = localStorage.getItem("token");
+    const userToken = useLocalStorageGetItem("user-token");
     const [Cart, setCart] = useState([]);
     async function addToCart(data, loadingState) {
         try {

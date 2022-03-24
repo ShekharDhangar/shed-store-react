@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useCartContext, useWishlistContext } from "../../context/context";
+import { isPresentInState } from "../utils";
 import "./CartProductCard.css";
 function CartProductCard({ productCard }) {
   const { removeFromCart, changeCartQuantity } = useCartContext();
   const { Wishlist, addToWishlist } = useWishlistContext();
   const [moveLoader, setMoveLoader] = useState(false);
 
-  function isPresentInState(data, state) {
-    return state.some((card) => card._id === data._id);
-  }
 
   function callWishlistAndCart(data) {
     !isPresentInState(data, Wishlist)

@@ -1,7 +1,7 @@
 import { BsFillCheckCircleFill,BsInfoCircleFill,MdError } from "../../icons/icons";
 
-import "./toast.css";
-function Snackbar({type,msg1="Success", msg2="It was Successfull"}) {
+import "./Alert.css";
+function Alert({type,msg1="Success", msg2="It was Successfull"}) {
     let AlertIcon;
     if(type==="success"){
         AlertIcon = <BsFillCheckCircleFill className="icon" />;
@@ -24,4 +24,4 @@ function Snackbar({type,msg1="Success", msg2="It was Successfull"}) {
 }
 
 
-export { Snackbar };
+export { Alert };

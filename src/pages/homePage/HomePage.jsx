@@ -1,4 +1,4 @@
-  import { Footer, Navbar } from "../../components/components";
+import { Footer, Navbar } from "../../components/components";
 import {
   dealsImages,
   featureTrendsImgs,

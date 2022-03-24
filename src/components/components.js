@@ -4,4 +4,5 @@ import { Footer } from './Footer/Footer';
 import { Loading } from './Loading/Loading';
 import { ProductCard } from './ProductCard/ProductCard';
 import { CartProductCard } from './CartProductCard/CartProductCard';
-export { Navbar, Sidebar, Footer, ProductCard, Loading , CartProductCard ,};
+import { Alert } from './Alert/Alert';
+export { Navbar,Alert, Sidebar, Footer, ProductCard, Loading , CartProductCard ,};

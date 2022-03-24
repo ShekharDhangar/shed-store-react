@@ -13,13 +13,21 @@ import {
   IoChevronBack,
 } from "../../icons/icons";
 import { useCartContext, useWishlistContext } from "../../context/context";
+import { useAuthContext } from "../../context/AuthContext";
 
 const Navbar = ({ menuRequired, navTxt, logoRemove }) => {
+  const { userState, logOutUser } = useAuthContext();
   const [DropDown, setDropDown] = useState(false);
-  const { Cart } = useCartContext();
+  const { Cart, setCart } = useCartContext();
   const navigate = useNavigate();
-  const { Wishlist } = useWishlistContext();
+  const { Wishlist ,setWishlist } = useWishlistContext();
   const [sideBar, setSideBar] = useState(false);
+  const logOutHandler=()=>{
+    logOutUser()
+    setCart([])
+    setWishlist([]);
+    navigate("/")
+  }
   const showSidebar = () => setSideBar((sideBar) => !sideBar);
   return (
     <>
@@ -81,12 +89,24 @@ const Navbar = ({ menuRequired, navTxt, logoRemove }) => {
               <span className="icon-txt">Profile</span>
               {DropDown && (
                 <div className="absoloute inset-0 profile-box">
-                  <button
-                    onClick={() => navigate("/login")}
+                  {userState.id && (
+                    <Link to="/login" >
+                    <button
+                    onClick={logOutHandler}
                     className="w-100 btn btn-xs"
-                  >
-                    Login/SignUp
+                    >
+                    LogOut
                   </button>
+                    </Link>
+                  )}
+                  {!userState.id && (
+                    <button
+                      onClick={() => navigate("/login")}
+                      className="w-100 btn btn-xs"
+                    >
+                      Login/SignUp
+                    </button>
+                  )}
                 </div>
               )}
             </div>

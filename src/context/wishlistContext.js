@@ -1,9 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import axios from "axios"
+import { useLocalStorageGetItem } from "../customHooks/customHooks";
 
 const WishlistContext = createContext();
 function WishlistProvider({ children }) {
-    const userToken = localStorage.getItem("token");
+    const userToken = useLocalStorageGetItem("user-token");
     const [Wishlist, setWishlist] = useState([])
 
     async function addToWishlist(data, loader = null) {

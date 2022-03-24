@@ -6,59 +6,82 @@ import {
   BsFillEyeFill,
 } from "../../../../icons/icons";
 import "./AuthLogin.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ForgotPassword } from "../ForgotPassword/ForgotPassword";
 import { useState } from "react";
-import { Navbar } from "../../../../components/components";
+import {  Loading, Navbar } from "../../../../components/components";
+import { useInputHandler } from "../../authFunctions";
+import { useAuthContext } from "../../../../context/AuthContext";
 function AuthLogin() {
+  const navigate = useNavigate();
+  const {logInUser,guestLogin}= useAuthContext();
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
-  function toggleShowPassword(){
-    setPasswordShown(passwordShown=>!passwordShown)
+  const [submitState, setSubmitState] = useState(false);
+  const [Guest, setGuest] = useState(false);
+  const { state } = useLocation();
+  const { inputState, inputUpdate } = useInputHandler({
+    email: "",
+    password: "",
+  });
+
+  function toggleShowPassword() {
+    setPasswordShown((passwordShown) => !passwordShown);
   }
-  const navigate = useNavigate();
-  function loginFormSubmitHandler(event) {
-    event.preventDefault();
+
+  function signInAsGuest(e) {
+    e.preventDefault();
+    guestLogin();
+  }
+
+  function userLogin(e) {
+    e.preventDefault();
+    logInUser(
+      inputState.email,
+      inputState.password,
+      setSubmitState
+    );
+    
   }
   return (
     <>
       <Navbar isMenuRequired={false} />
       <div className="flex form-container">
-        <form onSubmit={loginFormSubmitHandler} className="login-form">
+        <form className="login-form">
           <h2 className="form-title txt-center h2">Sign in</h2>
           <div className="input-with-icon">
             <FaUserAlt className="icon size-xs" />
             <input
-              type="text"
+              type="email"
               placeholder="Email"
+              name="email"
               className="input email-input"
+              onChange={inputUpdate}
             />
           </div>
-          {/* <div className="flex validation-style">
-          <img className="icon size-xs" src="/assets/warning.png" alt="" />
-          <span className="msg-txt error-txt lt-bold">
-            Please enter correct email
-          </span>
-        </div> */}
+
           <div className="flex input-with-icon">
             <BsKeyFill className="icon key-icon size-xs" />
             <input
               type={passwordShown ? "text" : "password"}
-              placeholder="Password"
+              placeholder="password"
+              name="password"
               className="input password-input"
+              onChange={inputUpdate}
+              
             />
             {passwordShown ? (
-              <BsFillEyeSlashFill onClick={toggleShowPassword} className="icon eye-icon " />
+              <BsFillEyeSlashFill
+                onClick={toggleShowPassword}
+                className="icon eye-icon "
+              />
             ) : (
-              <BsFillEyeFill onClick={toggleShowPassword} className="icon eye-icon" />
+              <BsFillEyeFill
+                onClick={toggleShowPassword}
+                className="icon eye-icon"
+              />
             )}
           </div>
-          {/* <div className="flex validation-style">
-          <img className="icon size-xs" src="/assets/warning.png" alt="" />
-          <span className="error-txt lt-bold">
-            Please enter correct Password
-          </span>
-        </div> */}
 
           <div className="flex remember-forgot-grp">
             <div className="flex remember-box">
@@ -84,10 +107,12 @@ function AuthLogin() {
             )}
           </div>
 
-          <button type="submit" className="btn btn-md link login-btn">
-            Sign in
+          <button onClick={userLogin} className="btn btn-md login-btn">
+            {submitState ? <Loading width="15px" height="15px" /> : `Sign in`}
           </button>
-
+          <button onClick={signInAsGuest} className="btn btn-sm m-1">
+            {Guest ? <Loading width="15px" height="15px" /> : `Sign As Guest`}
+          </button>
           <div className="signup-way">
             <span className="account-no">Don't have an Account?</span>
             <p className="lt-bold try-btn" onClick={() => navigate("/signup")}>
@@ -101,3 +126,20 @@ function AuthLogin() {
 }
 
 export { AuthLogin };
+{
+  /* <div className="flex validation-style">
+          <img className="icon size-xs" src="/assets/warning.png" alt="" />
+          <span className="msg-txt error-txt lt-bold">
+            Please enter correct email
+          </span>
+        </div> */
+}
+
+{
+  /* <div className="flex validation-style">
+          <img className="icon size-xs" src="/assets/warning.png" alt="" />
+          <span className="error-txt lt-bold">
+            Please enter correct Password
+          </span>
+        </div> */
+}

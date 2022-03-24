@@ -1,26 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import { makeServer } from './server';
-import { useSignUp } from './customHooks/useSignUp';
-import { CartProvider, WishlistProvider, ProductProvider,ToastProvider } from "./context/context"
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles/index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { makeServer } from "./server";
+import {
+  CartProvider,
+  WishlistProvider,
+  ProductProvider,
+  AlertProvider,
+} from "./context/context";
+import { AuthProvider } from "./context/AuthContext";
 makeServer();
-useSignUp();
 ReactDOM.render(
   <React.StrictMode>
-    < BrowserRouter>
-    <ToastProvider>
-      <ProductProvider>
-        <CartProvider>
-          <WishlistProvider>
-            <App />
-          </WishlistProvider>
-        </CartProvider>
-      </ProductProvider>
-    </ToastProvider>
-    </ BrowserRouter>
+    <BrowserRouter>
+      <AlertProvider>
+        <ProductProvider>
+          <CartProvider>
+            <WishlistProvider>
+              <AuthProvider>
+                <App />
+              </AuthProvider>
+            </WishlistProvider>
+          </CartProvider>
+        </ProductProvider>
+      </AlertProvider>
+    </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

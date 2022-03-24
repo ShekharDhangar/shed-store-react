@@ -1,8 +1,5 @@
 function productReducer(state, { type, payload }) {
   switch (type) {
-    case "USERSIGNED": {
-      return { ...state, userID: payload }
-    }
     case "INITIAL PRODUCTS": {
       return {
         ...state,
