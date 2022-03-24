@@ -86,7 +86,6 @@ function Cart() {
            <Link to="/shop">
            <button className="btn btn-sm outline ">View Products</button>
            </Link>
-
          </div>
         )}
     </>

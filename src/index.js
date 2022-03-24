@@ -11,7 +11,9 @@ import {
   AlertProvider,
 } from "./context/context";
 import { AuthProvider } from "./context/AuthContext";
+
 makeServer();
+useSignUp();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

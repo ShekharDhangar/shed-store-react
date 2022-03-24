@@ -41,8 +41,7 @@ function AuthLogin() {
       inputState.password,
       setSubmitState
     );
-    
-  }
+   }
   return (
     <>
       <Navbar isMenuRequired={false} />
@@ -59,7 +58,6 @@ function AuthLogin() {
               onChange={inputUpdate}
             />
           </div>
-
           <div className="flex input-with-icon">
             <BsKeyFill className="icon key-icon size-xs" />
             <input
@@ -82,7 +80,6 @@ function AuthLogin() {
               />
             )}
           </div>
-
           <div className="flex remember-forgot-grp">
             <div className="flex remember-box">
               <input
@@ -106,7 +103,6 @@ function AuthLogin() {
               <ForgotPassword setShowForgotPassword={setShowForgotPassword} />
             )}
           </div>
-
           <button onClick={userLogin} className="btn btn-md login-btn">
             {submitState ? <Loading width="15px" height="15px" /> : `Sign in`}
           </button>

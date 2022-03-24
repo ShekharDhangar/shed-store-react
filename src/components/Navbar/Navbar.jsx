@@ -100,8 +100,7 @@ const Navbar = ({ menuRequired=false, navTxt, logoRemove }) => {
           />
             <div
               onClick={() => setDropDown((prev) => !prev)}
-              className="flex pointer user-icon-box relative icon-container"
-            >
+              className="flex pointer user-icon-box relative icon-container" >
               <FaUserAlt className="user-icon icon" />
               <span className="icon-txt">Profile</span>
               {DropDown && (

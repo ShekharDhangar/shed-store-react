@@ -3,7 +3,6 @@ import { useCartContext, useWishlistContext ,useAuthContext} from "../../context
 import { AiFillStar, FaArrowRight, FaHeart } from "../../icons/icons";
 import { Loading } from "../components";
 import { Link } from "react-router-dom";
-
 import "./ProductCard.css";
 import { isPresentInState } from "../utils";
 function ProductCard({ productCardDetails, btnTxt }) {
@@ -28,7 +27,6 @@ function ProductCard({ productCardDetails, btnTxt }) {
     <div className="product-card-container" key={productCardDetails._id}>
       <div className="flex w-100 relative product-card">
         <div className="w-100 h-100 relative product-header">
-
           { userState.id ?
           isPresentInState(productCardDetails, Wishlist) ? (
             <button
