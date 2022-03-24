@@ -11,6 +11,7 @@ import {
   AlertProvider,
 } from "./context/context";
 import { AuthProvider } from "./context/AuthContext";
+
 makeServer();
 
 ReactDOM.render(

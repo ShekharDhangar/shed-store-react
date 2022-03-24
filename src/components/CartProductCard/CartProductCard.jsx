@@ -7,7 +7,6 @@ function CartProductCard({ productCard }) {
   const { Wishlist, addToWishlist } = useWishlistContext();
   const [moveLoader, setMoveLoader] = useState(false);
 
-
   function callWishlistAndCart(data) {
     !isPresentInState(data, Wishlist)
       ? addToWishlist(data, setMoveLoader)
