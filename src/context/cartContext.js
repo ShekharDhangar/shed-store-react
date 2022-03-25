@@ -4,9 +4,9 @@ import { useLocalStorageGetItem } from "../customHooks/customHooks";
 
 const CartContext = createContext();
 function CartProvider({ children }) {
-  const userToken = useLocalStorageGetItem("user-token");
   const [Cart, setCart] = useState([]);
   async function addToCart(data, loadingState) {
+      const userToken = useLocalStorageGetItem("user-token");
     try {
       loadingState(true);
       const response = await axios.post(
@@ -28,6 +28,7 @@ function CartProvider({ children }) {
   }
 
   async function changeCartQuantity(quantityType, productID) {
+    const userToken = useLocalStorageGetItem("user-token");
     try {
       const response = await axios.post(
         `/api/user/cart/${productID}`,
@@ -51,6 +52,7 @@ function CartProvider({ children }) {
   }
 
   async function removeFromCart(productID) {
+    const userToken = useLocalStorageGetItem("user-token");
     try {
       const response = await axios.delete(`/api/user/cart/${productID}`, {
         headers: {
