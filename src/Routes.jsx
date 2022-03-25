@@ -18,7 +18,6 @@ function RoutesPath() {
       <Route path="/" element={<HomePage />} />
       <Route path="shop" element={<ProductListing />} />
       <Route path="/filter" element={<MobFilterPanel />} />
-      <Route path="/ok" element={<ProductDetailPage />} />
       <Route path="/mockman" element={<MockAPI />} />
       <Route path="/:productID" element={<ProductDetailPage />} />
 
