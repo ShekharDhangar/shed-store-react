@@ -1,4 +1,4 @@
-  import { Footer, Navbar } from "../../components/components";
+import { Footer, Navbar } from "../../components/components";
 import {
   dealsImages,
   featureTrendsImgs,
@@ -6,7 +6,9 @@ import {
   roundImgCategory,
 } from "./homePageData";
 import "./HomePage.css";
+import {  useNavigate } from "react-router-dom";
 function HomePage() {
+  const navigate = useNavigate();
   return (
     <>
       <header>
@@ -28,6 +30,7 @@ function HomePage() {
           <div className="flex-container p-0 m-0 category-container">
             {dealsImages.map((img) => (
               <img
+              onClick={()=>navigate("/shop")}
                 key={img.id}
                 className="img-container pointer"
                 src={img.img}
@@ -44,6 +47,7 @@ function HomePage() {
             {roundImgCategory.map((img) => (
               <img
                 loading="lazy"
+                onClick={()=>navigate("/shop")}
                 key={img.id}
                 className="img-container pointer"
                 src={img.img}
@@ -60,6 +64,7 @@ function HomePage() {
             {featureTrendsImgs.map((img) => (
               <img
                 loading="lazy"
+                onClick={()=>navigate("/shop")}
                 key={img.id}
                 className="img-container pointer"
                 src={img.img}
@@ -76,6 +81,7 @@ function HomePage() {
             {homeDecorImgs.map((img) => (
               <img
                 loading="lazy"
+                onClick={()=>navigate("/shop")}
                 key={img.id}
                 className="img-container pointer"
                 src={img.img}

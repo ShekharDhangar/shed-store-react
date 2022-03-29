@@ -6,7 +6,7 @@ import { v4 as uuid } from "uuid";
  * */
 export const products = [
   {
-    _id: uuid(),
+    _id: "ccfc4b59-8ece-4e12-81aa-da2075c245f6",
     imgUrl: "https://rb.gy/wfwetz",
     alt: "product image of sweatshirt",
     productTitle: "Mist",
@@ -17,10 +17,10 @@ export const products = [
     starRating: 5,
     lazyLoading: "loading='lazy'",
     brands: "mist",
-    color: 'black'
+    color: "black",
   },
   {
-    _id: uuid(),
+    _id: "33c4b1ec-c7cc-4a49-81d1-1346c240d129",
     imgUrl: "https://rb.gy/ahvkiq",
     alt: "product image of hoodie",
     productTitle: "chucks",
@@ -34,7 +34,7 @@ export const products = [
     color: "red",
   },
   {
-    _id: uuid(),
+    _id: "f711af39-31f7-411d-94f1-82265a23ed06",
     imgUrl: "https://rb.gy/2chnmg",
     alt: "product image of hoodie",
     productTitle: "HRX",
@@ -45,10 +45,9 @@ export const products = [
     color: "red",
     lazyLoading: "loading='lazy'",
     brands: "hrx",
-
   },
   {
-    _id: uuid(),
+    _id: "30aa4343-501d-4516-876a-22e1ffd56c94",
     imgUrl: "https://rb.gy/bmmzor",
     alt: "product image of full sleeve t-shirt",
     productTitle: "HRX",
@@ -61,7 +60,7 @@ export const products = [
     color: "green",
   },
   {
-    _id: uuid(),
+    _id: "50dc5e4a-fc4b-4951-ba61-c24b7c590e29",
     imgUrl: "https://rb.gy/c9ffww",
     alt: "product image of T-shirt Hoodie",
     productTitle: "UCB",
@@ -72,11 +71,10 @@ export const products = [
     color: "green",
     lazyLoading: "loading='lazy'",
     brands: "ucb",
-    color: "green"
-
+    color: "green",
   },
   {
-    _id: uuid(),
+    _id: "547ab3a8-9c2d-4dcd-b9bf-084b14a4fb91",
     imgUrl: "https://rb.gy/v17yda",
     alt: "product image of joggers",
     productTitle: "HRX",
@@ -87,10 +85,10 @@ export const products = [
     color: "red",
     lazyLoading: "loading='lazy'",
     brands: "hrx",
-    color: "blue"
+    color: "blue",
   },
   {
-    _id: uuid(),
+    _id: "68b8bdba-c158-431b-add5-79397254b7f0",
     imgUrl: "https://rb.gy/6xpcev",
     alt: "product image of sweatshirt",
     productTitle: "Metro",
@@ -101,10 +99,10 @@ export const products = [
     color: "white",
     lazyLoading: "loading='lazy'",
     brands: "metro",
-    color: "blue"
+    color: "blue",
   },
   {
-    _id: uuid(),
+    _id: "a1c629f1-0dbb-4306-a67c-c2c749690973",
     imgUrl: "https://rb.gy/1dyvmk",
     alt: "product image of ucb T-shirt",
     productTitle: "UCB",
@@ -114,10 +112,10 @@ export const products = [
     starRating: 2,
     lazyLoading: "loading='lazy'",
     brands: "metro",
-    color: "black"
+    color: "black",
   },
   {
-    _id: uuid(),
+    _id: "338c98ff-1442-43b0-9222-43c6964a8d6d",
     imgUrl: "https://rb.gy/tubgi1",
     alt: "product image of t-shirt",
     productTitle: "Highlander",
@@ -127,10 +125,10 @@ export const products = [
     starRating: 2,
     lazyLoading: "loading='lazy'",
     brands: "harbour",
-    color: "red"
+    color: "red",
   },
   {
-    _id: uuid(),
+    _id: "f12ad115-1fab-4b04-b075-c08e9347300f",
     imgUrl: "https://rb.gy/8ed5ur",
     alt: "product image of t-shirt",
     productTitle: "Lee Cooper",
@@ -140,11 +138,11 @@ export const products = [
     starRating: 1,
     lazyLoading: "loading='lazy'",
     brands: "harbour",
-    color: "green"
+    color: "green",
   },
   {
-    _id: uuid(),
-    imgUrl: 'https://rb.gy/bmmzor',
+    _id: "c57d42a6-ff22-4f84-bc5f-8fe5a29acf44",
+    imgUrl: "https://rb.gy/bmmzor",
     alt: "product image of t-shirt",
     productTitle: " Cooper",
     productDesc: "Brand and Comfort Full Sleeve",
@@ -153,11 +151,11 @@ export const products = [
     starRating: 1,
     lazyLoading: "loading='lazy'",
     brands: "ucb",
-    color: "blue"
+    color: "blue",
   },
   {
-    _id: uuid(),
-    imgUrl: 'https://rb.gy/c9ffww',
+    _id: "1c75775a-bfda-4b77-9cc8-93c2e0f2f630",
+    imgUrl: "https://rb.gy/c9ffww",
     alt: "product image of t-shirt",
     productTitle: "Lee",
     productDesc: "Brand and Comfort Full Sleeve",
@@ -166,12 +164,12 @@ export const products = [
     starRating: 3,
     lazyLoading: "loading='lazy'",
     brands: "ucb",
-    color: "black"
+    color: "black",
   },
 
   {
-    _id: uuid(),
-    imgUrl: 'https://rb.gy/v17yda',
+    _id: "206860fc-351e-4dd2-a446-59b3795d5b5d",
+    imgUrl: "https://rb.gy/v17yda",
     alt: "product image of t-shirt",
     productTitle: "UCB",
     productDesc: "Brand and Comfort Full Sleeve",
@@ -180,10 +178,10 @@ export const products = [
     starRating: 3,
     lazyLoading: "loading='lazy'",
     brands: "ucb",
-    color: "green"
+    color: "green",
   },
   {
-    _id: uuid(),
+    _id: "cc741a30-34c0-44a7-81ed-231be4f91606",
     imgUrl: "https://rb.gy/1dyvmk",
     alt: "product image of t-shirt",
     productTitle: "Harbour",
@@ -193,10 +191,10 @@ export const products = [
     starRating: 3,
     lazyLoading: "loading='lazy'",
     brands: "harbour",
-    color: "red"
+    color: "red",
   },
   {
-    _id: uuid(),
+    _id: "06e6d005-fd8b-4b7d-adc8-ffa3b0dde695",
     imgUrl: "https://rb.gy/tubgi1",
     alt: "product image of shirt",
     productTitle: "Mist",
@@ -206,10 +204,10 @@ export const products = [
     starRating: 3,
     lazyLoading: "loading='lazy'",
     brands: "mist",
-    color: "black"
+    color: "black",
   },
   {
-    _id: uuid(),
+    _id: "3b23a5ac-81dd-4cd1-bcbc-1cad48a261d7",
     imgUrl: "https://rb.gy/yc3qp6",
     alt: "product image of shirt",
     productTitle: "Mist",
@@ -219,21 +217,23 @@ export const products = [
     starRating: 3,
     lazyLoading: "loading='lazy'",
     brands: "mist",
-    color: "green"
-  }, {
-    _id: uuid(),
+    color: "green",
+  },
+  {
+    _id: "5c691fdf-bb3e-48df-8df6-7e74dd1c6af2",
     imgUrl: "https://rb.gy/cnwbr3",
     alt: "product image of jeans",
     productTitle: "Chucks",
     productDesc: "Brand and Comfort Full Jeans",
-    productPrice: 699,
-    productOgPrice: 700,
+    productPrice: 1699,
+    productOgPrice: 3400,
     starRating: 3,
     lazyLoading: "loading='lazy'",
     brands: "chucks",
-    color: "blue"
-  }, {
-    _id: uuid(),
+    color: "blue",
+  },
+  {
+    _id: "a7be4ab7-7e66-40df-8196-8c8a5cb5447b",
     imgUrl: "https://rb.gy/vjuewv",
     alt: "product image of t-shirt",
     productTitle: "Chucks",
@@ -243,9 +243,10 @@ export const products = [
     starRating: 2,
     lazyLoading: "loading='lazy'",
     brands: "chucks",
-    color: "blue"
-  }, {
-    _id: uuid(),
+    color: "blue",
+  },
+  {
+    _id: "z7e214h2-48b6-4d6b-99f3-12214c014bd1",
     imgUrl: "https://rb.gy/jh78z7",
     alt: "product image of t-shirt",
     productTitle: "Metro",
@@ -255,9 +256,10 @@ export const products = [
     starRating: 4,
     lazyLoading: "loading='lazy'",
     brands: "metro",
-    color: "red"
-  }, {
-    _id: uuid(),
+    color: "red",
+  },
+  {
+    _id: "9ec636a3-5339-4377-b6cd-15d7fd2fe269",
     imgUrl: "https://rb.gy/lmyrix",
     alt: "product image of shorts",
     productTitle: "Metro",
@@ -267,6 +269,6 @@ export const products = [
     starRating: 3,
     lazyLoading: "loading='lazy'",
     brands: "metro",
-    color: "black"
+    color: "black",
   },
 ];

@@ -6,7 +6,6 @@ const contextInitialState = {
     filterBy: { brands: [], color: [] },
     rating: 0,
     productsList: [],
-    userID: "",
 }
 
 function ProductProvider({ children }) {

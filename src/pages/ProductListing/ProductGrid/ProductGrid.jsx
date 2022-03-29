@@ -11,7 +11,10 @@ import { useProductContext } from "../../../context/productContext";
 function ProductGrid() {
   const { productStates } = useProductContext();
   const filteredProductsData = getFilteredData(productStates, filtersData);
-  const ratingsData = getRatingsData(filteredProductsData, productStates.rating);
+  const ratingsData = getRatingsData(
+    filteredProductsData,
+    productStates.rating
+  );
   const sortedProducts = getSortedData(ratingsData, productStates.sortBy);
   const loadings = "loading";
   return (

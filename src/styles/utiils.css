@@ -22,6 +22,18 @@ img {
   width: 100%;
   height: 100%;
 }
+.empty-page-image{
+  max-width: 25rem;
+}
+.empty-page-title{
+  margin-bottom: 2rem;
+}
+.empty-page-box{
+  flex-direction: column;
+}
+.empty-page-box .btn{
+  margin: 1.5rem 0;
+}
 .border-radius {
   border-radius: 5px;
 }
@@ -38,4 +50,5 @@ img {
 .plain-btn:hover {
   background-color: var(--clr-white);
 }
+
 

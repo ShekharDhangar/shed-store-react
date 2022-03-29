@@ -8,8 +8,6 @@ function App() {
     (async () => {
       try {
         dispatch({ type: "LOADER", payload: true });
-        const encodedToken = localStorage.getItem("token");
-        dispatch({ type: "USERSIGNED", payload: encodedToken });
         const InitialProductsData = await getProductsData();
         if (InitialProductsData) {
           dispatch({ type: "INITIAL PRODUCTS", payload: InitialProductsData });

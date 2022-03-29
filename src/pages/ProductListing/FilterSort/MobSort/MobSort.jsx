@@ -10,7 +10,7 @@ function MobSort({ setShowMobSort }) {
       <div className=" w-100 mob-sort-container">
         <p className="flex mob-sort-heading">
           <IoChevronBack
-            onClick={() => setShowMobSort((prev) => !prev)}
+            onClick={() => setShowMobSort(false)}
             className="back-arrow icon"
           />
           SORT BY
@@ -20,7 +20,10 @@ function MobSort({ setShowMobSort }) {
           <p
             className="txt-sm mob-sort-items"
             key={sortItem}
-            onClick={() => dispatch({ type: "SORT", payload: sortItem })}
+            onClick={() => {
+              dispatch({ type: "SORT", payload: sortItem });
+              setShowMobSort(false);
+            }}
           >
             {sortItem}
           </p>
