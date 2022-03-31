@@ -66,10 +66,6 @@ function FilterSortPanel({ filtersData, sortsData }) {
             min={1}
             max={5}
             defaultValue={5}
-            // defaultValue={5}
-            // min={minMax[0]}
-            // max={minMax[1]}
-            // defaultValue={minMax[1]}
             onChange={(e) =>
               dispatch({ type: "RATING", payload: e.target.value })
             }

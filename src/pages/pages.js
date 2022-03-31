@@ -10,4 +10,6 @@ import { Wishlist } from "./Wishlist/Wishlist"
 import { AuthLogin } from "./AuthenticationPage/AuthenticationComp/AuthLogin/AuthLogin";
 import { AuthSignUp } from "./AuthenticationPage/AuthenticationComp/AuthSignUp/AuthSignUp";
 import { ProductDetailPage } from "./ProductDetailPage/ProductDetailPage";
-export { HomePage,AuthLogin,ProductDetailPage,AuthSignUp, MobSort, MobFilterPanel, Cart, ProductGrid, FilterSortBtn, ProductListing, FilterSortPanel , Wishlist}
+import {Error404Page} from "./Error404Page/Error404Page"
+export { Error404Page,HomePage,AuthLogin,ProductDetailPage,AuthSignUp, MobSort, MobFilterPanel, Cart, ProductGrid, FilterSortBtn, ProductListing, FilterSortPanel , Wishlist}
+

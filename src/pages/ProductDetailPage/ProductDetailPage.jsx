@@ -20,11 +20,9 @@ function ProductDetailPage() {
   const [addingToCart, setAddingToCart] = useState(false);
   const { productStates } = useProductContext();
   const { productID } = useParams();
-  console.log(productID,productStates.productsList);
   const productDetailCard = productStates.productsList?.find(
     (currProduct) => currProduct._id === productID
     );
-    console.log(productDetailCard)
   return (
     <>
       <Navbar menuRequired={false} navTxt={"Back"} logoRemove={"logo-remove"} />
@@ -100,10 +98,6 @@ function ProductDetailPage() {
               ) : (
                 <button className="btn btn-sm cart-btn">ADD TO CART</button>
               )}
-
-              {/* <button className=" add-wishlist-btn">
-                <FaHeart className="icon size-xs" />
-              </button> */}
 
               {userState.id ? (
                 isPresentInState(productDetailCard, Wishlist) ? (

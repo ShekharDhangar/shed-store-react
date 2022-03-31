@@ -20,10 +20,6 @@ function AuthSignUp() {
     setPasswordShown((passwordShown) => !passwordShown);
   }
   const navigate = useNavigate();
-  // const { state } = useLocation();
-  // const previousPath = state?.previousPath || "/";
-  // const  SetUserDetails  = useUserDetails();
-  // console.log(SetUserDetails,'function')
   const { inputState, inputUpdate } = useInputHandler({
     firstName: "",
     lastName: "",
@@ -32,28 +28,19 @@ function AuthSignUp() {
     password2: "",
   });
 
-  const passwordValidation = () => {
-    const passwordExpression =
-    /^(?=.*\d)(?=.*[a-z]).{5,10}$/;
-
-    if (inputState.password !== inputState.password2) {
-      console.log("passwords do not match");
-      return false;
-    }
-    if (!passwordExpression.test(inputState.password) || !inputState.password2.match(passwordExpression)){
-      console.log(!passwordExpression.test(inputState.password),'1');
-      console.log((inputState.password2.match(passwordExpression)),"2");
-      console.log("password should follow rules");
-      return false
-    }
-    return true;
-  };
-
+  const passwordExpression =
+  /^(?=.*\d)(?=.*[a-z]).{5,10}$/;
   
 
   function submitFormHandler(e) {
     e.preventDefault();
-      signUpUser(inputState.firstName,inputState.lastName,inputState.email,inputState.password,setformSubmitState);;
+    const passwordMatch = (inputState.password !== inputState.password2);
+    const passwordExpressionMatch = (!passwordExpression.test(inputState.password) || !inputState.password2.match(passwordExpression))  
+    if(!passwordMatch && !passwordExpressionMatch){
+      signUpUser(inputState.firstName,inputState.lastName,inputState.email,inputState.password,setformSubmitState);
+    }else{
+      console.log('password must contain more than 5 characters with number,alphabet and atleast 1 special character')
+    }
   }
   return (
     <>
