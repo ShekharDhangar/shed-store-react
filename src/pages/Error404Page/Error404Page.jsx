@@ -15,7 +15,7 @@ export function Error404Page() {
     <section className="flex error-page">
       <div className="flex flex-column error-content ">
           <h1 className="error-letter">404</h1>
-        <p className="error-title">Oops! You ran out of videos.</p>
+        <p className="error-title">Oops! You ran out of clothes.</p>
         <p className="error-desc">
           The page you're looking for is now beyond our reach. Let's get you ...     </p>
           <span className="txt-md lt-bold count-txt">Back in {counter}</span>
