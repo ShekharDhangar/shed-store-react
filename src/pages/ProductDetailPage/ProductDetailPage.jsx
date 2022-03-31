@@ -23,6 +23,7 @@ function ProductDetailPage() {
   const productDetailCard = productStates.productsList?.find(
     (currProduct) => currProduct._id === productID
     );
+  
   return (
     <>
       <Navbar menuRequired={false} navTxt={"Back"} logoRemove={"logo-remove"} />

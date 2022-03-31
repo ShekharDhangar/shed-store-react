@@ -12,4 +12,3 @@ import { AuthSignUp } from "./AuthenticationPage/AuthenticationComp/AuthSignUp/A
 import { ProductDetailPage } from "./ProductDetailPage/ProductDetailPage";
 import {Error404Page} from "./Error404Page/Error404Page"
 export { Error404Page,HomePage,AuthLogin,ProductDetailPage,AuthSignUp, MobSort, MobFilterPanel, Cart, ProductGrid, FilterSortBtn, ProductListing, FilterSortPanel , Wishlist}
-
