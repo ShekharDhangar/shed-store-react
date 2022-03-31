@@ -57,7 +57,7 @@ function ProductCard({ productCardDetails, btnTxt }) {
               )}
             </button>
           ):<button className="flex icon-badge"> <FaHeart className="icon size-xs" /></button>}
-          <Link to={`/${productCardDetails._id}`} >
+          <Link to={`/shop/${productCardDetails._id}`} >
           <div className="w-100 relative product-img-container">
             <img
               className={`w-100 h-100 absolute inset ${productCardDetails.lazyLoading}`}
