@@ -36,7 +36,7 @@ const navIconsData = [
         title: 'Wishlist',
         url:'/wishlist',
         txtClassName: "icon-txt",
-        icon: <FaHeart className='wishlist-icon icon ' />,
+        icon: <FaHeart className='icon ' />,
     },
     {
         id: "cart-icon",
