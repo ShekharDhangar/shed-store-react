@@ -115,7 +115,7 @@ function ProductDetailPage() {
                     {wishlistLoading ? (
                       <Loading width="20px" height="20px" />
                     ) : (
-                      <FaHeart className="icon size-xs primary-clr" />
+                      <FaHeart className="icon size-xs present-already" />
                     )}
                   </button>
                 ) : (

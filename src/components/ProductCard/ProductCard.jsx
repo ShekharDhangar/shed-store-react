@@ -40,7 +40,7 @@ function ProductCard({ productCardDetails, btnTxt }) {
               {wishlistLoader ? (
                 <Loading width="20px" height="20px" />
               ) : (
-                <FaHeart className="icon size-xs primary-clr" />
+                <FaHeart className="icon size-xs present-already" />
               )}
             </button>
           ) : (

@@ -51,4 +51,6 @@ img {
   background-color: var(--clr-white);
 }
 
-
+.present-already{
+  color: var(--clr-red);
+}
