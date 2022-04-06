@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import "../AuthenticationComp.css";
 import { useState } from "react";
 import {
@@ -9,7 +9,7 @@ import {
   BsFillEyeFill,
 } from "../../../../icons/icons";
 import { Loading, Navbar } from "../../../../components/components";
-import { useInputHandler, useUserDetails } from "../../authFunctions";
+import { useInputHandler } from "../../authFunctions";
 import { useAuthContext } from "../../../../context/AuthContext";
 
 function AuthSignUp() {
@@ -52,29 +52,6 @@ function AuthSignUp() {
           className="signup-form"
         >
           <h2 className="form-title txt-center h2 ">Create Account</h2>
-          <div className="flex-container social-login">
-            <a href="#">
-              <img
-                className="icon size-xs"
-                src="https://img.icons8.com/color/48/000000/google-logo.png"
-              />
-            </a>
-            <a href="#">
-              <img
-                className="icon size-xs"
-                src="https://img.icons8.com/ios-glyphs/30/000000/github.png"
-              />
-            </a>
-            <a href="#">
-              <img
-                className="icon size-xs"
-                src="https://img.icons8.com/color/48/000000/twitter--v1.png"
-              />
-            </a>
-          </div>
-          <p className="or">
-            <span>or</span>
-          </p>
           <div className="name-input-box">
             <div className="input-with-icon ">
               <FaUserAlt className="icon size-xs" />
