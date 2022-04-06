@@ -97,7 +97,7 @@ function ProductDetailPage() {
                   </button>
                 )
               ) : (
-                <button className="btn btn-sm cart-btn">ADD TO CART</button>
+                <button onClick={() => navigate("/login")} className="btn btn-sm cart-btn">ADD TO CART</button>
               )}
 
               {userState.id ? (
@@ -134,7 +134,7 @@ function ProductDetailPage() {
                   </button>
                 )
               ) : (
-                <button className="add-wishlist-btn">
+                <button onClick={() => navigate("/login")} className="add-wishlist-btn">
                   {" "}
                   <FaHeart className="icon size-xs" />
                 </button>
