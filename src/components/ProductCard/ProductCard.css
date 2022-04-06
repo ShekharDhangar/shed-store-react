@@ -35,6 +35,8 @@
 .primary-clr{
   color: var(--primary-clr);
 }
+
+
 @media only screen and (max-width: 50em) {
   .product-content .product-description {
     font-size: 1.15em;

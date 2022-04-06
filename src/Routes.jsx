@@ -8,6 +8,7 @@ import {
   ProductListing,
   Cart,
   Wishlist,
+  Error404Page,
   ProductDetailPage,
 } from "./pages/pages";
 import { AuthLogin, AuthSignUp } from "./pages/pages";
@@ -19,7 +20,8 @@ function RoutesPath() {
       <Route path="shop" element={<ProductListing />} />
       <Route path="/filter" element={<MobFilterPanel />} />
       <Route path="/mockman" element={<MockAPI />} />
-      <Route path="/:productID" element={<ProductDetailPage />} />
+      <Route path="/shop/:productID" element={<ProductDetailPage />} />
+      <Route path="*" element={<Error404Page />}></Route>
 
       <Route element={<RestrictAuth />}>
         <Route path="/login" element={<AuthLogin />} />

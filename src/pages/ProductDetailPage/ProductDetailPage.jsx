@@ -20,11 +20,10 @@ function ProductDetailPage() {
   const [addingToCart, setAddingToCart] = useState(false);
   const { productStates } = useProductContext();
   const { productID } = useParams();
-  console.log(productID,productStates.productsList);
   const productDetailCard = productStates.productsList?.find(
     (currProduct) => currProduct._id === productID
     );
-    console.log(productDetailCard)
+  
   return (
     <>
       <Navbar menuRequired={false} navTxt={"Back"} logoRemove={"logo-remove"} />
@@ -98,12 +97,8 @@ function ProductDetailPage() {
                   </button>
                 )
               ) : (
-                <button className="btn btn-sm cart-btn">ADD TO CART</button>
+                <button onClick={() => navigate("/login")} className="btn btn-sm cart-btn">ADD TO CART</button>
               )}
-
-              {/* <button className=" add-wishlist-btn">
-                <FaHeart className="icon size-xs" />
-              </button> */}
 
               {userState.id ? (
                 isPresentInState(productDetailCard, Wishlist) ? (
@@ -120,7 +115,7 @@ function ProductDetailPage() {
                     {wishlistLoading ? (
                       <Loading width="20px" height="20px" />
                     ) : (
-                      <FaHeart className="icon size-xs primary-clr" />
+                      <FaHeart className="icon size-xs present-already" />
                     )}
                   </button>
                 ) : (
@@ -139,7 +134,7 @@ function ProductDetailPage() {
                   </button>
                 )
               ) : (
-                <button className="add-wishlist-btn">
+                <button onClick={() => navigate("/login")} className="add-wishlist-btn">
                   {" "}
                   <FaHeart className="icon size-xs" />
                 </button>

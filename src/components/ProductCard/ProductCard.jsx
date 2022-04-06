@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useCartContext, useWishlistContext ,useAuthContext} from "../../context/context";
 import { AiFillStar, FaArrowRight, FaHeart } from "../../icons/icons";
 import { Loading } from "../components";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import "./ProductCard.css";
 import { isPresentInState } from "../utils";
 function ProductCard({ productCardDetails, btnTxt }) {
   const { Cart, addToCart } = useCartContext();
+  const navigate = useNavigate();
   const { userState } = useAuthContext();
   const { Wishlist, addToWishlist, removeFromWishlist } = useWishlistContext();
   const [wishlistLoader, showWishlistLoader] = useState(false);
@@ -39,7 +40,7 @@ function ProductCard({ productCardDetails, btnTxt }) {
               {wishlistLoader ? (
                 <Loading width="20px" height="20px" />
               ) : (
-                <FaHeart className="icon size-xs primary-clr" />
+                <FaHeart className="icon size-xs present-already" />
               )}
             </button>
           ) : (
@@ -56,8 +57,8 @@ function ProductCard({ productCardDetails, btnTxt }) {
                 <FaHeart className="icon size-xs " />
               )}
             </button>
-          ):<button className="flex icon-badge"> <FaHeart className="icon size-xs" /></button>}
-          <Link to={`/${productCardDetails._id}`} >
+          ):<button onClick={()=>navigate("/login")} className="flex icon-badge"> <FaHeart className="icon size-xs" /></button>}
+          <Link to={`/shop/${productCardDetails._id}`} >
           <div className="w-100 relative product-img-container">
             <img
               className={`w-100 h-100 absolute inset ${productCardDetails.lazyLoading}`}
@@ -103,7 +104,7 @@ function ProductCard({ productCardDetails, btnTxt }) {
             >
               {isAddingToCart ? <Loading width="20px" height="20px" /> : btnTxt}
             </button>
-          ):<button className="w-100 btn btn-xs cart-btn" >Add To Cart</button>}
+          ):<button onClick={()=>navigate("/login")} className="w-100 btn btn-xs cart-btn" >Add To Cart</button>}
         </div>
       </div>
     </div>

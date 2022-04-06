@@ -3,23 +3,23 @@ import {
   FaUserAlt,
   BsKeyFill,
   BsFillEyeSlashFill,
+  IoWarning,
   BsFillEyeFill,
 } from "../../../../icons/icons";
 import "./AuthLogin.css";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ForgotPassword } from "../ForgotPassword/ForgotPassword";
 import { useState } from "react";
-import {  Loading, Navbar } from "../../../../components/components";
+import { Loading, Navbar } from "../../../../components/components";
 import { useInputHandler } from "../../authFunctions";
 import { useAuthContext } from "../../../../context/AuthContext";
 function AuthLogin() {
   const navigate = useNavigate();
-  const {logInUser,guestLogin}= useAuthContext();
+  const { logInUser, guestLogin } = useAuthContext();
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
   const [submitState, setSubmitState] = useState(false);
   const [Guest, setGuest] = useState(false);
-  const { state } = useLocation();
   const { inputState, inputUpdate } = useInputHandler({
     email: "",
     password: "",
@@ -36,12 +36,8 @@ function AuthLogin() {
 
   function userLogin(e) {
     e.preventDefault();
-    logInUser(
-      inputState.email,
-      inputState.password,
-      setSubmitState
-    );
-   }
+    logInUser(inputState.email, inputState.password, setSubmitState);
+  }
   return (
     <>
       <Navbar isMenuRequired={false} />
@@ -66,7 +62,6 @@ function AuthLogin() {
               name="password"
               className="input password-input"
               onChange={inputUpdate}
-              
             />
             {passwordShown ? (
               <BsFillEyeSlashFill
@@ -122,20 +117,3 @@ function AuthLogin() {
 }
 
 export { AuthLogin };
-{
-  /* <div className="flex validation-style">
-          <img className="icon size-xs" src="/assets/warning.png" alt="" />
-          <span className="msg-txt error-txt lt-bold">
-            Please enter correct email
-          </span>
-        </div> */
-}
-
-{
-  /* <div className="flex validation-style">
-          <img className="icon size-xs" src="/assets/warning.png" alt="" />
-          <span className="error-txt lt-bold">
-            Please enter correct Password
-          </span>
-        </div> */
-}

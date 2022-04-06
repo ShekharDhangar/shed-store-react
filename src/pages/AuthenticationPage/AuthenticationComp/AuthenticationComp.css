@@ -14,3 +14,6 @@
     font-size: 1.75rem;
     color: var(--primary-clr);
 }
+.warning-clr{
+    color: var(--danger-clr);
+}
