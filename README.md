@@ -1,3 +1,4 @@
-## E-Commerce Backend
+## SHED-STORE
 
-This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
+A One Stop Platform for all your fashion needs.  You can wishlist or add to cart a product. 
+Tech Stack: React JS 
