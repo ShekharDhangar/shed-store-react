@@ -1,0 +1,16 @@
+.alert-icon .icon {
+  height: 3rem;
+}
+.alert {
+  position: absolute;
+  top: 20rem;
+  right: 10rem;
+}
+.alert-content {
+  justify-content: center;
+}
+.al-danger .alert-icon .icon {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
